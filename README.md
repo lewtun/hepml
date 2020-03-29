@@ -11,6 +11,14 @@
 
 Machine learning is a subfield of artificial intelligence that focuses on using algorithms to parse data, learn from it, and then make predictions about something in the world. In the last decade, this framework has led to significant advances in [computer vision](https://www.youtube.com/watch?v=kSLJriaOumA&feature=youtu.be), [natural language processing](https://openai.com/blog/better-language-models/), and [reinforcement learning](https://openai.com/blog/emergent-tool-use/). More recently, machine learning has begun to attract interest in the physical sciences and is rapidly becoming an important part of the physicist's toolkit, especially in data-rich fields like high-energy particle physics and cosmology.
 
+## Basics
+
+**Timetable:** 14:15 to 16:00 on Tuesdays via Zoom due to the COVID-19 pandemic.
+
+**Class Slack group:** [ml-for-physics.slack.com](https://ml-for-physics.slack.com)
+
+If you need to contact me, I strongly encourage you to do so via Slack since I'll check this a few times per day.
+
 ## Learning objectives of the course
 This course provides students with a _hands-on_ introduction to the methods of machine learning, with an emphasis on applying these methods to solve physics problems. By the end of this course, it is expected that students will:
 
