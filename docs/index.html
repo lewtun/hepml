@@ -1,12 +1,12 @@
 ---
 
-title: Practical Machine Learning for Particle Physicists
+title: Practical Machine Learning for Physicists
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "Welcome to the materials for the University of Bern's graduate course on machine learning!"
-description: "Welcome to the materials for the University of Bern's graduate course on machine learning!"
+summary: "Welcome to the University of Bern's graduate course on machine learning!"
+description: "Welcome to the University of Bern's graduate course on machine learning!"
 ---
 <!--
 
@@ -29,15 +29,19 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-is-this-thing-called-machine-learning?">What is this thing called machine learning?<a class="anchor-link" href="#What-is-this-thing-called-machine-learning?"> </a></h2>
+<h2 id="What-is-this-thing-called-machine-learning?">What is this thing called machine learning?<a class="anchor-link" href="#What-is-this-thing-called-machine-learning?"> </a></h2><div style="text-align: center">
+{% include image.html file="/hepml/images/machine_learning.png" %}
+   <p style="text-align: center;"> <b>Figure reference:</b> https://xkcd.com/1838/ </p>
+</div><p>Machine learning is a subfield of artificial intelligence that focuses on using algorithms to parse data, learn from it, and then make predictions about something in the world. In the last decade, this framework has led to significant advances in <a href="https://www.youtube.com/watch?v=kSLJriaOumA&amp;feature=youtu.be">computer vision</a>, <a href="https://openai.com/blog/better-language-models/">natural language processing</a>, and <a href="https://openai.com/blog/emergent-tool-use/">reinforcement learning</a>. More recently, machine learning has begun to attract interest in the physical sciences and is rapidly becoming an important part of the physicist's toolkit, especially in data-rich fields like high-energy particle physics and cosmology.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Learning-objectives-of-the-course">Learning objectives of the course<a class="anchor-link" href="#Learning-objectives-of-the-course"> </a></h2><p>This module provides students with a <em>hands-on</em> introduction to the methods of data science, with an emphasis on applying these methods to solve business problems. By the end of this course, it is expected that students will:</p>
+<h2 id="Learning-objectives-of-the-course">Learning objectives of the course<a class="anchor-link" href="#Learning-objectives-of-the-course"> </a></h2><p>This course provides students with a <em>hands-on</em> introduction to the methods of machine learning, with an emphasis on applying these methods to solve physics problems. By the end of this course, it is expected that students will:</p>
 <ul>
-<li>Know how to approach business problems from a data science perspective;</li>
+<li>Know how to approach physics problems from a machine learning perspective;</li>
 <li>Understand the fundamental principles behind extracting useful knowledge from data; </li>
 <li>Understand the core concepts and terminology of machine learning;</li>
 <li>Gain hands-on experience with mining data for insights.</li>
@@ -56,7 +60,7 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Structure-of-the-course">Structure of the course<a class="anchor-link" href="#Structure-of-the-course"> </a></h2><p>The module structure consists of classroom sessions, self-study tasks, and group work. The classroom sessions will involve a mix of theoretical and practical (programming) work, with an emphasis on the latter. The self-study tasks will be used to read selected chapters from the module textbook. The outline for the module is shown in the table below.</p>
+<h2 id="Structure-of-the-course">Structure of the course<a class="anchor-link" href="#Structure-of-the-course"> </a></h2><p>Due to constraints placed by the COVID-19 pandemic, the course will be delivered entirely via online lectures. Each lecture will involve a mix of theoretical and programming work, with an emphasis on the latter. A tentative outline for the course is shown in the table below.</p>
 <table>
 <thead><tr>
 <th style="text-align:left">CW</th>
@@ -67,123 +71,45 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">8</td>
-<td style="text-align:left">20.02</td>
-<td style="text-align:left">Introduction to data science</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks/lesson01_intro-to-pandas.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson01_intro-to-pandas.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson01_intro-to-pandas.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/file/d/14bPRdbbf_CjDOfG8rBbSBQO-dDpxDj2G/view"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson01_intro-to-ds-and-ml.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">9</td>
-<td style="text-align:left">27.02</td>
-<td style="text-align:left">Exploratory data analysis</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson02_exploratory-data-analysis.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson02_exploratory-data-analysis.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson02_exploratory-data-analysis.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/open?id=1o7zrt0wB5XeJp1r16hv2dUVQVQEVAygl"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson02_exploratory-data-analysis.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">10</td>
-<td style="text-align:left">5.03</td>
-<td style="text-align:left">Data cleaning and feature engineering</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson03_data-cleaning.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson03_data-cleaning.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson03_data-cleaning.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/open?id=1qif0v7ZclsCsjT1efrCAjjUTqZ_KyTIl"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson03_data-cleaning.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">11</td>
-<td style="text-align:left">12.03</td>
-<td style="text-align:left">Introduction to random forests</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson04_intro-to-random-forests.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>  <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson04_intro-to-random-forests.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson04_intro-to-random-forests.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/open?id=18yESZldXJrdXiaOQWmiA35-8vIqOnNK8"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson04_intro-to-random-forests.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">12</td>
-<td style="text-align:left">19.03</td>
-<td style="text-align:left">Random forest deep dive</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson05_random-forest-deep-dive.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson05_random-forest-deep-dive.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson05_random-forest-deep-dive.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/open?id=1xRpRXFY_wMzHn2QgW3nDzULh8Y7G5IVt"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson05_random-forest-deep-dive.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">13</td>
-<td style="text-align:left">26.03</td>
-<td style="text-align:left">Model interpretation</td>
-<td style="text-align:left"><a href="https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson06_model-interpretation.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder"></a> <a href="https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson06_model-interpretation.ipynb"><img src="https://img.shields.io/static/v1?label=notebook&amp;message=lesson06_model-interpretation.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"></a> <a href="https://drive.google.com/open?id=15IIYC_MksmXI6VfSL3ee-rLm7TRF0v2U"><img src="https://img.shields.io/static/v1?label=slides&amp;message=lesson06_model-interpretation.pdf&amp;color=blue&amp;logo=Google-drive" alt="slides"></a></td>
-</tr>
-<tr>
-<td style="text-align:left">14</td>
-<td style="text-align:left">2.04</td>
-<td style="text-align:left">Classification</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
 <td style="text-align:left">15</td>
-<td style="text-align:left">9.04</td>
-<td style="text-align:left"><strong>No class (Easter)</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">16</td>
-<td style="text-align:left">16.04</td>
-<td style="text-align:left"><strong>Midterm exam &amp; define group projects</strong></td>
+<td style="text-align:left">7.4</td>
+<td style="text-align:left">Introduction to random forests</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">17</td>
-<td style="text-align:left">23.04</td>
-<td style="text-align:left">Cross-validation and model performance</td>
+<td style="text-align:left">21.4</td>
+<td style="text-align:left">Random forest deep dive</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">18</td>
-<td style="text-align:left">30.04</td>
-<td style="text-align:left">Neighbours and clusters I</td>
+<td style="text-align:left">28.4</td>
+<td style="text-align:left">Model interpretation</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">19</td>
-<td style="text-align:left">7.05</td>
-<td style="text-align:left">Neighbours and clusters II</td>
+<td style="text-align:left">5.5</td>
+<td style="text-align:left">Random forests from scratch</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">20</td>
-<td style="text-align:left">14.05</td>
-<td style="text-align:left">Natural language processing I</td>
+<td style="text-align:left">12.5</td>
+<td style="text-align:left">Gradient boosting</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">21</td>
-<td style="text-align:left">21.05</td>
-<td style="text-align:left"><strong>No class (Ascension)</strong></td>
+<td style="text-align:left">19.5</td>
+<td style="text-align:left">Topological machine learning I</td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left">22</td>
-<td style="text-align:left">28.05</td>
-<td style="text-align:left">Natural language processing II <strong>&amp; group project submission</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">23</td>
-<td style="text-align:left">4.06</td>
-<td style="text-align:left"><strong>Project presentations</strong></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">24</td>
-<td style="text-align:left">11.06</td>
-<td style="text-align:left">Deep learning</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">25</td>
-<td style="text-align:left">18.06</td>
-<td style="text-align:left">Exam preparation</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">26</td>
-<td style="text-align:left">25.06</td>
-<td style="text-align:left">Exam preparation</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">27</td>
-<td style="text-align:left">TBC</td>
-<td style="text-align:left"><strong>Final exam</strong></td>
+<td style="text-align:left">26.5</td>
+<td style="text-align:left">Topological machine learning II</td>
 <td style="text-align:left"></td>
 </tr>
 </tbody>
@@ -194,14 +120,7 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note:</strong> To download the notebooks, right-click on the badge <img src="https://img.shields.io/static/v1?label=notebook&amp;message=example-notebook.ipynb&amp;color=red&amp;logo=Jupyter" alt="notebook"> and select "Save Link as ..." and make sure to save them with the <code>.ipynb</code> ending.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cloud-environment">Cloud environment<a class="anchor-link" href="#Cloud-environment"> </a></h2><p>We will be teaching most of the class via Jupyter notebooks in Python. The notebooks for each class will be made available from links on this website. Note that some parts of the notebooks are removed for you to fill in as you follow along in class. You can open and run them directly on Binder by clicking on the Binder badge (see example below) at the top of each lecture notebook. We highly encourage the use of Binder, since it requires no local installation and runs for free.</p>
+<h2 id="Cloud-environment">Cloud environment<a class="anchor-link" href="#Cloud-environment"> </a></h2><p>We will be teaching most of the class via Jupyter notebooks in Python. You can open and run them directly on Binder by clicking on the Binder badge (see example below) at the top of each lecture notebook. We highly encourage the use of Binder, since it requires no local installation and runs for free.</p>
 <p>Binder badge:  <img src="https://mybinder.org/badge_logo.svg" alt="Binder"></p>
 <p>A few remarks about Binder:</p>
 <ol>
@@ -220,19 +139,19 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Local-environment">Local environment<a class="anchor-link" href="#Local-environment"> </a></h2><p>You can also install the data science lecture material locally on your laptop. In general, when working with Python it is recommended to use <a href="https://docs.python.org/3/tutorial/venv.html">virtual environments</a>. This makes sure that the packages you install don't interfere with the packages you already installed in other projects.</p>
-<p>To install the data science lectures library run the following command:</p>
-<div class="highlight"><pre><span></span>pip install dslectures
+<h2 id="Local-environment">Local environment<a class="anchor-link" href="#Local-environment"> </a></h2><p>You can also run the course material locally on your laptop. In general, when working with Python it is recommended to use <a href="https://realpython.com/python-virtual-environments-a-primer/">virtual environments</a>. This makes sure that the packages you install don't interfere with the packages you already installed in other projects.</p>
+<p>To install the library associated with the course run the following command:</p>
+<div class="highlight"><pre><span></span>pip install hepml
 </pre></div>
 <p>To install JupyterLab (a more advanced environment than Jupyter notebooks) run:</p>
 <div class="highlight"><pre><span></span>pip install jupyterlab
 </pre></div>
-<p>Then make sure you download all course material from the <a href="https://github.com/lewtun/dslectures">GitHub repository</a> or just the missing notebooks. In general you will need to copy all materials, since some resources such as images are not self-contained in the notebooks.</p>
+<p>Then make sure you download all course material from the <a href="https://github.com/lewtun/hepml">GitHub repository</a> or just the missing notebooks. In general you will need to copy all materials, since some resources such as images are not self-contained in the notebooks.</p>
 <p>Finally, to start JuypterLab run:</p>
 <div class="highlight"><pre><span></span>jupyter-lab
 </pre></div>
 <h3 id="Updating-the-local-environment">Updating the local environment<a class="anchor-link" href="#Updating-the-local-environment"> </a></h3><p>Since we are developing the materials throughout the course you will need to update your local environment every time we move on to the next lesson. To do so just run the following command before you start JupyterLab</p>
-<div class="highlight"><pre><span></span>pip install --upgrade dslectures
+<div class="highlight"><pre><span></span>pip install --upgrade hepml
 </pre></div>
 
 </div>
@@ -240,38 +159,24 @@ description: "Welcome to the materials for the University of Bern's graduate cou
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Recommended-references">Recommended references<a class="anchor-link" href="#Recommended-references"> </a></h2><p><strong>Data Science</strong></p>
+<h2 id="Recommended-references">Recommended references<a class="anchor-link" href="#Recommended-references"> </a></h2><p><strong>Machine Learning</strong></p>
 <ul>
-<li>F. Provost and T. Fawcett, <em>Data Science for Business,</em> (O’Reilly Media 2013). </li>
-<li>J. VanderPlas, <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"><em>Python for Data Science Handbook,</em></a> (O’Reilly Media 2016).</li>
+<li>J. Howard, <a href="https://course18.fast.ai/ml"><em>Introduction to Machine Learning for Coders,</em></a></li>
+<li>P. Mehta et al., <a href="https://arxiv.org/abs/1803.08823"><em>A high-bias, low-variance introduction to Machine Learning for physicists</em></a></li>
+<li>A. Géron, <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781491962282/"><em>Hands-On Machine Learning with Scikit-Learn and TensorFlow,</em></a></li>
+<li>J. Murugan and D. Robertson, <a href="https://arxiv.org/abs/1904.11044"><em>An Introduction to Topological Data Analysis for Physicists: From LGM to FRBs</em></a></li>
 </ul>
-<p>Provost &amp; Fawcett will be used as the <strong><em>primary</em></strong> textbook for the module and is the standard data science text for business programs at over 150 universities around the world. The book by VanderPlas is an excellent reference for the Python programming aspects of the module.</p>
+<p>The structure of the lectures is adapted (with permission) from Jeremy Howard's excellent machine learning course for coders, while the theoretical content is based on the comprehensive review articles by Mehta et al and Murugan and Roberston.</p>
 <p><strong>Python Programming</strong></p>
 <ul>
-<li>W. McKinney, <em>Python for Data Analysis,</em> 2nd ed (O’Reilly Media 2017).</li>
+<li>W. McKinney, <a href="http://shop.oreilly.com/product/0636920023784.do"><em>Python for Data Analysis,</em></a></li>
 </ul>
-<p>We will use the Python programming language to analyse and visualise a variety of datasets in this module. McKinney’s book is an excellent reference to have at hand and covers the nuts and bolts of the NumPy and pandas packages.</p>
-<p><strong>Machine Learning</strong></p>
-<ul>
-<li>A. Géron, <em>Hands-On Machine Learning with Scikit-Learn and TensorFlow,</em> (O’Reilly Media 2017).</li>
-<li>J. Howard, <em>Introduction to Machine Learning for Coders,</em> (fastAI 2018).</li>
-</ul>
-<p>Although machine learning is not the only focus of this course, Géron’s book or fastAI’s MOOC provide the right level of technical detail to gain a deeper understanding of this exciting field.</p>
+<p>We will use the Python programming language to analyse and visualise a variety of datasets in this course. McKinney’s book is an excellent reference to have at hand and covers the nuts and bolts of the NumPy and pandas packages.</p>
 <p><strong>Kaggle Learn</strong></p>
 <ul>
 <li><a href="https://www.kaggle.com/learn/overview">Kaggle Learn</a></li>
 </ul>
 <p>Kaggle Learn is a great resource to brush up on concepts like Python basics, data visualisation or pandas in an online notebook environment (similar to Binder).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sources-used-for-this-syllabus">Sources used for this syllabus<a class="anchor-link" href="#Sources-used-for-this-syllabus"> </a></h2><ul>
-<li>M. Loukides, <em>What is Data Science?,</em> (O’Reilly 2010). Retrieved from <a href="https://www.oreilly.com/ideas/what-is-data-science">https://www.oreilly.com/ideas/what-is-data-science</a></li>
-<li>D. Conway, <em>The Data Science Venn Diagram,</em> (2010). Retrieved from <a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram">http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram</a></li>
-</ul>
 
 </div>
 </div>

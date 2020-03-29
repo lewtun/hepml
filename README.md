@@ -1,13 +1,20 @@
-# Practical Machine Learning for Particle Physicists
-> Welcome to the materials for the University of Bern's graduate course on machine learning!
+# Practical Machine Learning for Physicists
+> Welcome to the University of Bern's graduate course on machine learning!
 
 
 ## What is this thing called machine learning?
 
-## Learning objectives of the course
-This module provides students with a _hands-on_ introduction to the methods of data science, with an emphasis on applying these methods to solve business problems. By the end of this course, it is expected that students will:
+<div style="text-align: center">
+<img src="notebooks/images/machine_learning.png">
+   <p style="text-align: center;"> <b>Figure reference:</b> https://xkcd.com/1838/ </p>
+</div>
 
-* Know how to approach business problems from a data science perspective;
+Machine learning is a subfield of artificial intelligence that focuses on using algorithms to parse data, learn from it, and then make predictions about something in the world. In the last decade, this framework has led to significant advances in [computer vision](https://www.youtube.com/watch?v=kSLJriaOumA&feature=youtu.be), [natural language processing](https://openai.com/blog/better-language-models/), and [reinforcement learning](https://openai.com/blog/emergent-tool-use/). More recently, machine learning has begun to attract interest in the physical sciences and is rapidly becoming an important part of the physicist's toolkit, especially in data-rich fields like high-energy particle physics and cosmology.
+
+## Learning objectives of the course
+This course provides students with a _hands-on_ introduction to the methods of machine learning, with an emphasis on applying these methods to solve physics problems. By the end of this course, it is expected that students will:
+
+* Know how to approach physics problems from a machine learning perspective;
 * Understand the fundamental principles behind extracting useful knowledge from data; 
 * Understand the core concepts and terminology of machine learning;
 * Gain hands-on experience with mining data for insights.
@@ -21,35 +28,20 @@ Throughout the course, students will also have the opportunity to learn several 
 * Practical experience with machine learning.
 
 ## Structure of the course
-The module structure consists of classroom sessions, self-study tasks, and group work. The classroom sessions will involve a mix of theoretical and practical (programming) work, with an emphasis on the latter. The self-study tasks will be used to read selected chapters from the module textbook. The outline for the module is shown in the table below. 
+Due to constraints placed by the COVID-19 pandemic, the course will be delivered entirely via online lectures. Each lecture will involve a mix of theoretical and programming work, with an emphasis on the latter. A tentative outline for the course is shown in the table below. 
 
 | CW | Date | Topic | Links |
 | :--- | :--- | :--- | :--- |
-| 8 | 20.02 | Introduction to data science | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks/lesson01_intro-to-pandas.ipynb) [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson01_intro-to-pandas.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson01_intro-to-pandas.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson01_intro-to-ds-and-ml.pdf&color=blue&logo=Google-drive)](https://drive.google.com/file/d/14bPRdbbf_CjDOfG8rBbSBQO-dDpxDj2G/view) |
-| 9 | 27.02 | Exploratory data analysis | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson02_exploratory-data-analysis.ipynb) [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson02_exploratory-data-analysis.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson02_exploratory-data-analysis.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson02_exploratory-data-analysis.pdf&color=blue&logo=Google-drive)](https://drive.google.com/open?id=1o7zrt0wB5XeJp1r16hv2dUVQVQEVAygl)  |
-| 10 | 5.03 | Data cleaning and feature engineering | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson03_data-cleaning.ipynb) [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson03_data-cleaning.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson03_data-cleaning.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson03_data-cleaning.pdf&color=blue&logo=Google-drive)](https://drive.google.com/open?id=1qif0v7ZclsCsjT1efrCAjjUTqZ_KyTIl) |
-| 11 | 12.03 | Introduction to random forests | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson04_intro-to-random-forests.ipynb)  [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson04_intro-to-random-forests.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson04_intro-to-random-forests.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson04_intro-to-random-forests.pdf&color=blue&logo=Google-drive)](https://drive.google.com/open?id=18yESZldXJrdXiaOQWmiA35-8vIqOnNK8) |
-| 12 | 19.03 | Random forest deep dive | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson05_random-forest-deep-dive.ipynb) [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson05_random-forest-deep-dive.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson05_random-forest-deep-dive.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson05_random-forest-deep-dive.pdf&color=blue&logo=Google-drive)](https://drive.google.com/open?id=1xRpRXFY_wMzHn2QgW3nDzULh8Y7G5IVt) |
-| 13 | 26.03 | Model interpretation | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/dslectures/master?urlpath=lab/tree/notebooks%2Flesson06_model-interpretation.ipynb) [![notebook](https://img.shields.io/static/v1?label=notebook&message=lesson06_model-interpretation.ipynb&color=red&logo=Jupyter)](https://raw.githubusercontent.com/lewtun/dslectures/master/notebooks/lesson06_model-interpretation.ipynb) [![slides](https://img.shields.io/static/v1?label=slides&message=lesson06_model-interpretation.pdf&color=blue&logo=Google-drive)](https://drive.google.com/open?id=15IIYC_MksmXI6VfSL3ee-rLm7TRF0v2U) |
-| 14 | 2.04 | Classification | |
-| 15 | 9.04 | **No class (Easter)** | |
-| 16 | 16.04 | **Midterm exam & define group projects** | |
-| 17 | 23.04 | Cross-validation and model performance | |
-| 18 | 30.04 | Neighbours and clusters I | |
-| 19 | 7.05 | Neighbours and clusters II | |
-| 20 | 14.05 | Natural language processing I | |
-| 21 | 21.05 | **No class (Ascension)** | |
-| 22 | 28.05 | Natural language processing II **& group project submission** | |
-| 23 | 4.06 | **Project presentations** | |
-| 24 | 11.06 | Deep learning | |
-| 25 | 18.06 | Exam preparation| |
-| 26 | 25.06 | Exam preparation | |
-| 27 | TBC | **Final exam** | |
-
-**Note:** To download the notebooks, right-click on the badge ![notebook](https://img.shields.io/static/v1?label=notebook&message=example-notebook.ipynb&color=red&logo=Jupyter) and select "Save Link as ..." and make sure to save them with the `.ipynb` ending.
+| 15 | 7.4 | Introduction to random forests |  |
+| 17 | 21.4 | Random forest deep dive |  |
+| 18 | 28.4 | Model interpretation |  |
+| 19 | 5.5 | Random forests from scratch | |
+| 20 | 12.5 | Gradient boosting | |
+| 21 | 19.5 | Topological machine learning I | |
+| 22 | 26.5 | Topological machine learning II | |
 
 ## Cloud environment
-We will be teaching most of the class via Jupyter notebooks in Python. The notebooks for each class will be made available from links on this website. Note that some parts of the notebooks are removed for you to fill in as you follow along in class. You can open and run them directly on Binder by clicking on the Binder badge (see example below) at the top of each lecture notebook. We highly encourage the use of Binder, since it requires no local installation and runs for free. 
+We will be teaching most of the class via Jupyter notebooks in Python. You can open and run them directly on Binder by clicking on the Binder badge (see example below) at the top of each lecture notebook. We highly encourage the use of Binder, since it requires no local installation and runs for free. 
 
 Binder badge:  ![Binder](https://mybinder.org/badge_logo.svg) 
 
@@ -70,12 +62,12 @@ Since Binder does not save your changes permanently, you should download the not
 </div>
 
 ## Local environment
-You can also install the data science lecture material locally on your laptop. In general, when working with Python it is recommended to use [virtual environments](https://docs.python.org/3/tutorial/venv.html). This makes sure that the packages you install don't interfere with the packages you already installed in other projects.
+You can also run the course material locally on your laptop. In general, when working with Python it is recommended to use [virtual environments](https://realpython.com/python-virtual-environments-a-primer/). This makes sure that the packages you install don't interfere with the packages you already installed in other projects.
 
-To install the data science lectures library run the following command:
+To install the library associated with the course run the following command:
 
 ```bash
-pip install dslectures
+pip install hepml
 ```
 
 To install JupyterLab (a more advanced environment than Jupyter notebooks) run:
@@ -83,7 +75,7 @@ To install JupyterLab (a more advanced environment than Jupyter notebooks) run:
 ```bash
 pip install jupyterlab
 ```
-Then make sure you download all course material from the [GitHub repository](https://github.com/lewtun/dslectures) or just the missing notebooks. In general you will need to copy all materials, since some resources such as images are not self-contained in the notebooks.
+Then make sure you download all course material from the [GitHub repository](https://github.com/lewtun/hepml) or just the missing notebooks. In general you will need to copy all materials, since some resources such as images are not self-contained in the notebooks.
 
 Finally, to start JuypterLab run:
 ```bash
@@ -94,33 +86,25 @@ jupyter-lab
 Since we are developing the materials throughout the course you will need to update your local environment every time we move on to the next lesson. To do so just run the following command before you start JupyterLab
 
 ```bash
-pip install --upgrade dslectures
+pip install --upgrade hepml
 ```
 
 ## Recommended references
 
-**Data Science**
-* F. Provost and T. Fawcett, _Data Science for Business,_ (O’Reilly Media 2013). 
-* J. VanderPlas, [_Python for Data Science Handbook,_](https://jakevdp.github.io/PythonDataScienceHandbook/) (O’Reilly Media 2016).
+**Machine Learning**
+* J. Howard, [_Introduction to Machine Learning for Coders,_](https://course18.fast.ai/ml)
+* P. Mehta et al., [_A high-bias, low-variance introduction to Machine Learning for physicists_](https://arxiv.org/abs/1803.08823)
+* A. Géron, [_Hands-On Machine Learning with Scikit-Learn and TensorFlow,_](https://www.oreilly.com/library/view/hands-on-machine-learning/9781491962282/)
+* J. Murugan and D. Robertson, [_An Introduction to Topological Data Analysis for Physicists: From LGM to FRBs_](https://arxiv.org/abs/1904.11044)
 
-Provost & Fawcett will be used as the **_primary_** textbook for the module and is the standard data science text for business programs at over 150 universities around the world. The book by VanderPlas is an excellent reference for the Python programming aspects of the module.
+The structure of the lectures is adapted (with permission) from Jeremy Howard's excellent machine learning course for coders, while the theoretical content is based on the comprehensive review articles by Mehta et al and Murugan and Roberston.
 
 **Python Programming**
-* W. McKinney, _Python for Data Analysis,_ 2nd ed (O’Reilly Media 2017).
+* W. McKinney, [_Python for Data Analysis,_](http://shop.oreilly.com/product/0636920023784.do)
 
-We will use the Python programming language to analyse and visualise a variety of datasets in this module. McKinney’s book is an excellent reference to have at hand and covers the nuts and bolts of the NumPy and pandas packages.
-
-**Machine Learning**
-* A. Géron, _Hands-On Machine Learning with Scikit-Learn and TensorFlow,_ (O’Reilly Media 2017).
-* J. Howard, _Introduction to Machine Learning for Coders,_ (fastAI 2018).
-
-Although machine learning is not the only focus of this course, Géron’s book or fastAI’s MOOC provide the right level of technical detail to gain a deeper understanding of this exciting field.
+We will use the Python programming language to analyse and visualise a variety of datasets in this course. McKinney’s book is an excellent reference to have at hand and covers the nuts and bolts of the NumPy and pandas packages.
 
 **Kaggle Learn**
 * [Kaggle Learn](https://www.kaggle.com/learn/overview)
 
 Kaggle Learn is a great resource to brush up on concepts like Python basics, data visualisation or pandas in an online notebook environment (similar to Binder).
-
-##  Sources used for this syllabus
-* M. Loukides, _What is Data Science?,_ (O’Reilly 2010). Retrieved from https://www.oreilly.com/ideas/what-is-data-science
-* D. Conway, _The Data Science Venn Diagram,_ (2010). Retrieved from http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram
