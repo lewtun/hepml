@@ -1,5 +1,5 @@
 # Practical Machine Learning for Physicists
-> Welcome to the University of Bern's graduate course on machine learning!
+> Welcome to the graduate course on machine learning at the Albert Einstein Center for Fundamental Physics of the University of Bern!
 
 
 ## What is this thing called machine learning?
