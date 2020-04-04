@@ -1,6 +1,8 @@
 {
   "hepml": {
     "Overview": "/",
-    "Core library": "/core"
+    "Core library": "/core",
+    "Evaluation functions for \u03c4 \u2192 3\u03bc": "/evaluation",
+    "Lesson 1 - Introduction to random forests": "/lesson01_intro-to-random-forests"
   }
 }
