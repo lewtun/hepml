@@ -2,9 +2,19 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"download_dataset": "00_core.ipynb",
+         "display_large": "00_core.ipynb",
+         "rf_feature_importance": "00_core.ipynb",
+         "plot_feature_importance": "00_core.ipynb",
+         "__rolling_window": "01_evaluation.ipynb",
+         "__cvm": "01_evaluation.ipynb",
+         "compute_cvm": "01_evaluation.ipynb",
+         "__roc_curve_splitted": "01_evaluation.ipynb",
+         "compute_ks": "01_evaluation.ipynb",
+         "roc_auc_truncated": "01_evaluation.ipynb"}
 
-modules = []
+modules = ["core.py",
+           "evaluation.py"]
 
 doc_url = "https://fastai.github.io/hepml/"
 
