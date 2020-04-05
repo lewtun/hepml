@@ -13,9 +13,6 @@ entries:
       title: Core library
       url: /core
     - output: web,pdf
-      title: "Evaluation functions for \u03C4 \u2192 3\u03BC"
-      url: /evaluation
-    - output: web,pdf
       title: Lesson 1 - Introduction to random forests
       url: /lesson01_intro-to-random-forests
     output: web

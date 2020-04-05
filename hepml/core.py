@@ -16,10 +16,7 @@ def download_dataset(dataset_name: str):
     """Download datasets from Google Drive."""
 
     name_to_id = {
-        "tau_decays_train.csv": "1iVSiZ0jLwf2_wi4Cyk2bU9O99RoTl4QF",
-        "tau_decays_test.csv": "1t9HNGjlP9Zt0PDYZjJNu90BgRymvbaT8",
-        "tau_decays_check_agreement.csv": "12jD2rxJUTJ5O9Wt457B_njl0ZxQTFKTG",
-        "tau_decays_check_correlation.csv": "18E7v81v5iCY86PwLeOWxQxZdsPcCEXQE"
+        "susy.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs"
     }
 
     path = "../data/"
