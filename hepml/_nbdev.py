@@ -9,8 +9,8 @@ index = {"download_dataset": "00_core.ipynb",
 
 modules = ["core.py"]
 
-doc_url = "https://fastai.github.io/hepml/"
+doc_url = "https://lewtun.github.io/hepml/"
 
-git_url = "https://github.com/fastai/hepml/tree/master/"
+git_url = "https://github.com/lewtun/hepml/tree/master/"
 
 def custom_doc_links(name): return None
