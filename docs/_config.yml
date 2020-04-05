@@ -1,4 +1,4 @@
-repository: fastai/hepml
+repository: lewtun/hepml
 output: web
 topnav_title: hepml
 site_title: hepml
