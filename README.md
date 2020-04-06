@@ -40,7 +40,7 @@ Due to constraints placed by the COVID-19 pandemic, the course will be delivered
 
 | CW | Date | Topic | Links |
 | :--- | :--- | :--- | :--- |
-| 15 | 7.4 | Introduction to random forests |  |
+| 15 | 7.4 | Introduction to random forests | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/hepml/master?urlpath=lab/tree/notebooks%2Flesson01_intro-to-random-forests.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lewtun/hepml/blob/master/notebooks/lesson01_intro-to-random-forests.ipynb) |
 | 17 | 21.4 | Random forest deep dive |  |
 | 18 | 28.4 | Model interpretation |  |
 | 19 | 5.5 | Random forests from scratch | |
