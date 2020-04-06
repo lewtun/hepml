@@ -35,5 +35,6 @@ jobs:
       - name: Colab Badge Action
         uses: trsvchn/colab-badge-action@v1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           check: "all"
           update: true
