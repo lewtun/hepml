@@ -31,10 +31,3 @@ jobs:
       - name: Run tests
         run: |
           nbdev_test_nbs --fname '*/[!lesson|!_lesson]*.ipynb'
-      - uses: actions/checkout@v1
-      - name: Colab Badge Action
-        uses: trsvchn/colab-badge-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          check: "all"
-          update: true

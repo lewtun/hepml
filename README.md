@@ -49,9 +49,14 @@ Due to constraints placed by the COVID-19 pandemic, the course will be delivered
 | 22 | 26.5 | Topological machine learning II | |
 
 ## Cloud environment
-We will be teaching most of the class via Jupyter notebooks in Python. You can open and run them directly on Binder by clicking on the Binder badge (see example below) at the top of each lecture notebook. We highly encourage the use of Binder, since it requires no local installation and runs for free. 
+We will be teaching the class entirely via Jupyter notebooks in Python. You can open and run them directly on Binder or Google Colab by clicking on the badges
 
-Binder badge:  ![Binder](https://mybinder.org/badge_logo.svg) 
+![Binder](https://mybinder.org/badge_logo.svg) 
+![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)
+
+at the top of each lecture notebook. We highly encourage the use of Binder or Colab, since they require no local installation and run for free. 
+
+
 
 A few remarks about Binder:
 
