@@ -15,6 +15,9 @@ entries:
     - output: web,pdf
       title: Lesson 1 - Introduction to random forests
       url: /lesson01_intro-to-random-forests
+    - output: web,pdf
+      title: Python primer
+      url: /python-primer
     output: web
     title: hepml
   output: web

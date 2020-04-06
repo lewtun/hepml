@@ -184,7 +184,8 @@ description: "A first look at training Random Forest models to identify supersym
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">download_dataset</span><span class="p">(</span><span class="s2">&quot;susy.gz&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this is a big file and can take a while to download</span>
+<span class="n">download_dataset</span><span class="p">(</span><span class="s2">&quot;susy.gz&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -280,7 +281,8 @@ description: "A first look at training Random Forest models to identify supersym
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">susy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA</span> <span class="o">/</span> <span class="s2">&quot;susy.gz&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;gzip&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this can take a while to load</span>
+<span class="n">susy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">DATA</span> <span class="o">/</span> <span class="s2">&quot;susy.gz&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;gzip&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 </pre></div>
 
     </div>

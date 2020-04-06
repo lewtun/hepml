@@ -2,6 +2,7 @@
   "hepml": {
     "Overview": "/",
     "Core library": "/core",
-    "Lesson 1 - Introduction to random forests": "/lesson01_intro-to-random-forests"
+    "Lesson 1 - Introduction to random forests": "/lesson01_intro-to-random-forests",
+    "Python primer": "/python-primer"
   }
 }
