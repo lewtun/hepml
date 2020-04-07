@@ -16,7 +16,7 @@ def download_dataset(dataset_name: str):
     """Download datasets from Google Drive."""
 
     name_to_id = {
-        "susy.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs"
+        "susy.csv.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs"
     }
 
     path = "../data/"
