@@ -202,6 +202,7 @@ description: "A deep dive into how Random Forests work and some tricks for makin
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Download of susy_train.feather dataset complete.
+Download of susy_test.feather dataset complete.
 </pre>
 </div>
 </div>
@@ -714,7 +715,8 @@ description: "A deep dive into how Random Forests work and some tricks for makin
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">susy_sample</span> <span class="o">=</span> <span class="n">susy_train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you may want to reduce this to 20,000 if running on Binder / Colab</span>
+<span class="n">susy_sample</span> <span class="o">=</span> <span class="n">susy_train</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -814,8 +816,8 @@ description: "A deep dive into how Random Forests work and some tricks for makin
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 4.06 s, sys: 36.9 ms, total: 4.1 s
-Wall time: 525 ms
+<pre>CPU times: user 4.19 s, sys: 47.8 ms, total: 4.23 s
+Wall time: 536 ms
 </pre>
 </div>
 </div>
@@ -1956,8 +1958,8 @@ ROC AUC on valid: 0.87
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 2min 26s, sys: 784 ms, total: 2min 27s
-Wall time: 5min 37s
+<pre>CPU times: user 1min 13s, sys: 569 ms, total: 1min 14s
+Wall time: 4min 21s
 </pre>
 </div>
 </div>
@@ -2033,7 +2035,7 @@ Wall time: 5min 37s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 10, &#39;max_features&#39;: &#39;sqrt&#39;}</pre>
+<pre>{&#39;n_estimators&#39;: 80, &#39;min_samples_leaf&#39;: 25, &#39;max_features&#39;: &#39;log2&#39;}</pre>
 </div>
 
 </div>
@@ -2044,13 +2046,6 @@ Wall time: 5min 37s
 </div>
     {% endraw %}
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>{% include tip.html content='Since 160 is the maximum value evaluated for <code>n_estimators</code>, you can try expanding the search range to see if the score continues to improve.' %}</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can also examine the evaluation scores as follows:</p>
@@ -2081,16 +2076,16 @@ Wall time: 5min 37s
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.862 {&#39;n_estimators&#39;: 40, &#39;min_samples_leaf&#39;: 1, &#39;max_features&#39;: &#39;log2&#39;}
-0.862 {&#39;n_estimators&#39;: 20, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: 0.5}
-0.854 {&#39;n_estimators&#39;: 20, &#39;min_samples_leaf&#39;: 1, &#39;max_features&#39;: 0.5}
-0.870 {&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 10, &#39;max_features&#39;: &#39;sqrt&#39;}
-0.866 {&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 1, &#39;max_features&#39;: &#39;log2&#39;}
-0.869 {&#39;n_estimators&#39;: 80, &#39;min_samples_leaf&#39;: 25, &#39;max_features&#39;: 1.0}
-0.856 {&#39;n_estimators&#39;: 10, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: &#39;log2&#39;}
-0.863 {&#39;n_estimators&#39;: 20, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: &#39;log2&#39;}
-0.865 {&#39;n_estimators&#39;: 20, &#39;min_samples_leaf&#39;: 10, &#39;max_features&#39;: &#39;sqrt&#39;}
-0.870 {&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 25, &#39;max_features&#39;: 1.0}
+<pre>0.866 {&#39;n_estimators&#39;: 40, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: 0.5}
+0.869 {&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: &#39;sqrt&#39;}
+0.870 {&#39;n_estimators&#39;: 80, &#39;min_samples_leaf&#39;: 25, &#39;max_features&#39;: 1.0}
+0.867 {&#39;n_estimators&#39;: 40, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: &#39;sqrt&#39;}
+0.859 {&#39;n_estimators&#39;: 10, &#39;min_samples_leaf&#39;: 10, &#39;max_features&#39;: 1.0}
+0.869 {&#39;n_estimators&#39;: 160, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: 0.5}
+0.870 {&#39;n_estimators&#39;: 80, &#39;min_samples_leaf&#39;: 25, &#39;max_features&#39;: &#39;log2&#39;}
+0.855 {&#39;n_estimators&#39;: 20, &#39;min_samples_leaf&#39;: 1, &#39;max_features&#39;: &#39;sqrt&#39;}
+0.856 {&#39;n_estimators&#39;: 10, &#39;min_samples_leaf&#39;: 5, &#39;max_features&#39;: &#39;sqrt&#39;}
+0.840 {&#39;n_estimators&#39;: 10, &#39;min_samples_leaf&#39;: 1, &#39;max_features&#39;: 1.0}
 </pre>
 </div>
 </div>
@@ -2140,7 +2135,7 @@ Wall time: 5min 37s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.8707034458087671</pre>
+<pre>0.8704317099787612</pre>
 </div>
 
 </div>
