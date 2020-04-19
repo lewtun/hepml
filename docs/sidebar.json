@@ -3,6 +3,7 @@
     "Overview": "/",
     "Core library": "/core",
     "Lesson 1 - Introduction to random forests": "/lesson01_intro-to-random-forests",
+    "Lesson 2 - Random forest deep dive": "/lesson02_random-forest-deep-dive",
     "Python primer": "/python-primer"
   }
 }

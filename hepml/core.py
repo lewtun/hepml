@@ -16,7 +16,10 @@ def download_dataset(dataset_name: str):
     """Download datasets from Google Drive."""
 
     name_to_id = {
-        "susy.csv.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs"
+        "susy.csv.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs",
+        "susy.feather": "1PxCruwO42GV7FKtwZDXah7iGjDib7YPM",
+        "susy_train.feather": "1ezeCZycZ3BrEh-qOLiSJF40YowYEbbTH",
+        "susy_test.feather": "1UM8sheb4jzQa16haG6HnVbpJCxZwN2yE"
     }
 
     path = "../data/"
@@ -53,5 +56,5 @@ def rf_feature_importance(fitted_model, df):
 
 # Cell
 def plot_feature_importance(feature_importance):
-    fig, ax = plt.subplots(figsize=(12,8))
+    fig, ax = plt.subplots(figsize=(12, 8))
     return sns.barplot(y="Column", x="Importance", data=feature_importance, color="b")
