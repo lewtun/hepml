@@ -19,7 +19,8 @@ def download_dataset(dataset_name: str):
         "susy.csv.gz": "1rnR1v-BkMOtzV80R7jFyU1cwO3fGYrQs",
         "susy.feather": "1PxCruwO42GV7FKtwZDXah7iGjDib7YPM",
         "susy_train.feather": "1ezeCZycZ3BrEh-qOLiSJF40YowYEbbTH",
-        "susy_test.feather": "1UM8sheb4jzQa16haG6HnVbpJCxZwN2yE"
+        "susy_test.feather": "1UM8sheb4jzQa16haG6HnVbpJCxZwN2yE",
+        "susy_sample.feather": "1l4x_uBeup4eciLDK4YjnfY_G8yTpXLkP",
     }
 
     path = "../data/"

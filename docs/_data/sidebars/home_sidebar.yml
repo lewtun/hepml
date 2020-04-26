@@ -19,6 +19,9 @@ entries:
       title: Lesson 2 - Random forest deep dive
       url: /lesson02_random-forest-deep-dive
     - output: web,pdf
+      title: Lesson 3 - Random forest from scratch
+      url: /lesson03_random-forest-from-scratch
+    - output: web,pdf
       title: Python primer
       url: /python-primer
     output: web
