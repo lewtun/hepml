@@ -39,7 +39,7 @@ description: "A walkthrough on how to write a Random Forest classifier from scra
 <h2 id="Learning-objectives">Learning objectives<a class="anchor-link" href="#Learning-objectives"> </a></h2><ul>
 <li>Gain an in-depth understanding on how Random Forests work under the hood</li>
 <li>Understand the basics of object-oriented-programming (OOP) in Python</li>
-<li>Gain an introduction to computational complexity and steps one can take to optimise an algorithm for speed</li>
+<li>Gain an introduction to computational complexity and the steps one can take to optimise an algorithm for speed</li>
 </ul>
 
 </div>
@@ -167,7 +167,7 @@ description: "A walkthrough on how to write a Random Forest classifier from scra
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A good strategy when implementing any algorithm from scratch is to compare against an existing implementation.  This is especially true for machine learning algorithms, where there's many ways to <em>fail silently</em> by introducing bugs in the data manipulation steps that do not throw an error, but result in worse performance in the target metric.</p>
-<p>To that end, we will use the same sample of 100,000 events from the SUSY dataset, and to simplify the analysis during development we'll start by picking just two features to build our Random Forest on. At each step, we will compare our implementation against scikit-learn's <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> as a way of testing the correctness of our code.</p>
+<p>To that end, we will use the same sample of 100,000 events from the SUSY dataset that we analysed in lessons 1 and 2, and to simplify the analysis during development we'll start by picking just two features to build our Random Forest on. At each step, we will compare our implementation against scikit-learn's <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">RandomForestClassifier</a> as a way of testing the correctness of our code.</p>
 
 </div>
 </div>
@@ -699,16 +699,16 @@ susy.feather        susy_test.feather
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;__main__.DecisionTree at 0x1409c7290&gt;,
- &lt;__main__.DecisionTree at 0x1409c7250&gt;,
- &lt;__main__.DecisionTree at 0x1409c7410&gt;,
- &lt;__main__.DecisionTree at 0x1409c7450&gt;,
- &lt;__main__.DecisionTree at 0x1409c7590&gt;,
- &lt;__main__.DecisionTree at 0x1409c7850&gt;,
- &lt;__main__.DecisionTree at 0x11069db10&gt;,
- &lt;__main__.DecisionTree at 0x13f3bbf90&gt;,
- &lt;__main__.DecisionTree at 0x13f3bb810&gt;,
- &lt;__main__.DecisionTree at 0x13da793d0&gt;]</pre>
+<pre>[&lt;__main__.DecisionTree at 0x13f736e90&gt;,
+ &lt;__main__.DecisionTree at 0x13f736350&gt;,
+ &lt;__main__.DecisionTree at 0x13f736f10&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c050&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c490&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c210&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c1d0&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c310&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c650&gt;,
+ &lt;__main__.DecisionTree at 0x13f73c4d0&gt;]</pre>
 </div>
 
 </div>
@@ -740,7 +740,7 @@ susy.feather        susy_test.feather
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">DecisionTree</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">indices</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">):</span>
         <span class="c1"># use all rows for root node</span>
         <span class="k">if</span> <span class="n">indices</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
@@ -856,7 +856,7 @@ susy.feather        susy_test.feather
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In order to average the predictions across multiple trees in our forest, we need know what percentage of a given leaf node contains signal events and what percentage contains background. A simple way to do that is via the <code>Series.value_counts</code> method, e.g.</p>
+<p>In order to average the predictions across multiple trees in our forest, we need know what percentage of a given leaf node contains signal events and what percentage contains background. A simple way to do that is via the <code>np.unique</code> method, e.g.</p>
 
 </div>
 </div>
@@ -868,7 +868,8 @@ susy.feather        susy_test.feather
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># returns tuple - (class_labels, class_counts)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -883,9 +884,7 @@ susy.feather        susy_test.feather
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0    43374
-1.0    36626
-Name: signal, dtype: int64</pre>
+<pre>(array([0., 1.]), array([43374, 36626]))</pre>
 </div>
 
 </div>
@@ -898,7 +897,7 @@ Name: signal, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is not quite what we need because it just provides the raw counts, so let's normalise them an also return a NumPy array by dropping the index:</p>
+<p>This is not quite what we need because it just provides the raw counts, so let's normalise them as follows:</p>
 
 </div>
 </div>
@@ -910,7 +909,7 @@ Name: signal, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -950,8 +949,8 @@ Name: signal, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_class_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
-    <span class="n">probs</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_class_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">indices</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="n">probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">])</span>
 
     <span class="c1"># handle edge case when leaf only contains one sample</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -1049,7 +1048,7 @@ Name: signal, dtype: int64</pre>
 <p>{{% raw %}}
 $$ G_i = 1 - \sum_{k=1}^n p_{i,k}^2 $$
 {{% endraw %}}</p>
-<p>where $p_{i,k}$ is the ratio of class $k$ examples among the training examples in the ith node. We can get the values of $p_{i,k}$ by using the <code>Series.value_counts</code> method again, e.g.</p>
+<p>where $p_{i,k}$ is the ratio of class $k$ examples among the training examples in the ith node. We can get the values of $p_{i,k}$ by using the <code>np.unique</code> method again, e.g.</p>
 
 </div>
 </div>
@@ -1061,11 +1060,11 @@ $$ G_i = 1 - \sum_{k=1}^n p_{i,k}^2 $$
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pure</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">y_mixed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">y_mixed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 
-<span class="n">gini_pure</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_pure</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">gini_mixed</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">y_mixed</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">gini_pure</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_pure</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pure</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">gini_mixed</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_mixed</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_mixed</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gini pure = </span><span class="si">{</span><span class="n">gini_pure</span><span class="si">}</span><span class="s2">; Gini mixed = </span><span class="si">{</span><span class="n">gini_mixed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1342,7 +1341,7 @@ $$ G_i = 1 - \sum_{k=1}^n p_{i,k}^2 $$
 <p>{{% raw %}}
 $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right}}{m}G_\mathrm{right} $$
 {{% endraw %}}</p>
-<p>where $k$ is a single feature and $t_k$ is the split point (e.g. "missing energy magnitude $\leq$ 1.14). Thus for each feature $k$, the strategy will be to calculate $J(k, t_k)$ for every possible split point $t_k$ and update the score if it less than what we have seen already. Implemented as code, the result could look like:</p>
+<p>where $k$ is a single feature, $t_k$ is the split point (e.g. "missing energy magnitude $\leq$ 1.14), $m_\mathrm{left/right}$ is the number of examples in the left/right subset, and $G_\mathrm{left/right}$ is the Gini impurity. Thus for each feature $k$, the strategy will be to calculate $J(k, t_k)$ for every possible split point $t_k$ and update the score if it less than what we have seen already. Implemented as code, the result could look like:</p>
 
 </div>
 </div>
@@ -1417,7 +1416,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4.15 s ± 51.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>4 s ± 109 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -1581,7 +1580,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>64.4 ms ± 1.02 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<pre>64.8 ms ± 1.68 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre>
 </div>
 </div>
@@ -1907,7 +1906,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>n_samples: 293; value: [0.85324232 0.14675768]; gini: 0.2504397255646542; score: 0.22066400314213208; feature: missing energy magnitude; split_point: 1.4726196527481081</pre>
+<pre>n_samples: 293; value: [0.14675768 0.85324232]; gini: 0.2504397255646542; score: 0.22066400314213208; feature: missing energy magnitude; split_point: 1.4726196527481081</pre>
 </div>
 
 </div>
@@ -1973,7 +1972,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>n_samples: 230; value: [0.59565217 0.40434783]; gini: 0.4817013232514178; score: 0.4334455110107284; feature: lepton 1 pT; split_point: 1.5821422338485713</pre>
+<pre>n_samples: 230; value: [0.40434783 0.59565217]; gini: 0.4817013232514178; score: 0.4334455110107284; feature: lepton 1 pT; split_point: 1.5821422338485713</pre>
 </div>
 
 </div>
@@ -2006,7 +2005,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>n_samples: 102; value: [0.68627451 0.31372549]; gini: 0.43060361399461744; score: 0.37738731856378904; feature: lepton 1 pT; split_point: 0.6343935132026673</pre>
+<pre>n_samples: 102; value: [0.31372549 0.68627451]; gini: 0.43060361399461744; score: 0.37738731856378904; feature: lepton 1 pT; split_point: 0.6343935132026673</pre>
 </div>
 
 </div>
@@ -2039,7 +2038,7 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>n_samples: 191; value: [0.94240838 0.05759162]; gini: 0.10854965598530741; score: 0.1032951765936059; feature: missing energy magnitude; split_point: 1.6436718702316286</pre>
+<pre>n_samples: 191; value: [0.05759162 0.94240838]; gini: 0.10854965598530741; score: 0.1032951765936059; feature: missing energy magnitude; split_point: 1.6436718702316286</pre>
 </div>
 
 </div>
@@ -2118,8 +2117,8 @@ $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 3.6 s, sys: 3.66 ms, total: 3.61 s
-Wall time: 3.61 s
+<pre>CPU times: user 13.1 s, sys: 289 ms, total: 13.4 s
+Wall time: 13.8 s
 </pre>
 </div>
 </div>
@@ -2259,8 +2258,8 @@ Wall time: 3.61 s
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 137 ms, sys: 983 µs, total: 138 ms
-Wall time: 137 ms
+<pre>CPU times: user 246 ms, sys: 3.62 ms, total: 249 ms
+Wall time: 251 ms
 </pre>
 </div>
 </div>
@@ -2300,7 +2299,7 @@ Wall time: 137 ms
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.7362514326066656</pre>
+<pre>0.7603031405574215</pre>
 </div>
 
 </div>
@@ -2354,7 +2353,7 @@ Wall time: 137 ms
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>With a difference of about 3%, our implementation does not perform too badly at all!</p>
+<p>With a difference of &lt; 1%, our implementation does not perform too badly at all!</p>
 
 </div>
 </div>
@@ -2483,8 +2482,8 @@ Wall time: 137 ms
                     <span class="n">gini_impurity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
                 <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">calculate_class_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">indices</span><span class="p">):</span>
-        <span class="n">probs</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">def</span> <span class="nf">calculate_class_probabilities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="n">indices</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">],</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">indices</span><span class="p">])</span>
 
         <span class="c1"># handle edge case when leaf only contains one sample</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">probs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
@@ -2571,7 +2570,7 @@ Wall time: 137 ms
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.7362514326066656</pre>
+<pre>0.7603031405574215</pre>
 </div>
 
 </div>
@@ -2612,8 +2611,8 @@ Wall time: 137 ms
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 16.2 s, sys: 19.4 ms, total: 16.3 s
-Wall time: 16.3 s
+<pre>CPU times: user 15.5 s, sys: 38.2 ms, total: 15.5 s
+Wall time: 15.7 s
 </pre>
 </div>
 </div>
@@ -2623,7 +2622,7 @@ Wall time: 16.3 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.8247636977017744</pre>
+<pre>0.8309216956906361</pre>
 </div>
 
 </div>
@@ -2978,8 +2977,10 @@ Wall time: 16.3 s
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">400</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example from - https://ipython-books.github.io/52-accelerating-pure-python-code-with-numba-and-just-in-time-compilation/</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mi">400</span>
 <span class="n">iterations</span> <span class="o">=</span> <span class="mi">100</span>
+
 
 <span class="k">def</span> <span class="nf">mandelbrot_1</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
