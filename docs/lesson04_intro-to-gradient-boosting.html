@@ -379,9 +379,9 @@ description: "A first look at how gradient boosting combines several weak learne
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that this tree looks similar to the classification trees we have analysed in previous lessons. The main difference is that instead of predicting a class like "signal" or "background" in each leaf node, a regression tree predicts a continuous <em>value</em>. This value is simply the average target value of the training examples associated with a given node.</p>
 <p>The CART algorithm is also similar to classification, except we now split the training set to minimise the Mean Squared Error (MSE) instead og Gini impurity:</p>
-<p>{{% raw %}}
+<p>{% raw %}
 $$J(k, t_k) = \frac{m_\mathrm{left}}{m}\mathrm{MSE}_\mathrm{left} + \frac{m_\mathrm{right}}{m}\mathrm{MSE}_\mathrm{right} $$
-{{% endraw %}}</p>
+{% endraw %}</p>
 <p>where</p>
 $$ \mathrm{MSE}_\mathrm{node} = \sum_{i\in \mathrm{node}} \left(\hat{y}_\mathrm{node} - y^{(i)}\right)^2 
 \qquad \mathrm{and} \qquad
@@ -897,9 +897,9 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It is not hard to see how we can continue this procedure by successively adding new models:</p>
-<p>{{% raw %}}
+<p>{% raw %}
 $$ F_{m+1}(x) = F_m(x) + h_m(x)\,, \qquad \mathrm{for} \, m \geq 0 $$
-{{% endraw %}}</p>
+{% endraw %}</p>
 
 </div>
 </div>
