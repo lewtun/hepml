@@ -1045,9 +1045,9 @@ susy.feather        susy_test.feather
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The next piece of information we need to calculate is the Gini impurity at a given node in the tree. Recall that the formula for Gini impurity is</p>
-<p>{{% raw %}}
+<p>{% raw %}
 $$ G_i = 1 - \sum_{k=1}^n p_{i,k}^2 $$
-{{% endraw %}}</p>
+{% endraw %}</p>
 <p>where $p_{i,k}$ is the ratio of class $k$ examples among the training examples in the ith node. We can get the values of $p_{i,k}$ by using the <code>np.unique</code> method again, e.g.</p>
 
 </div>
@@ -1338,9 +1338,9 @@ $$ G_i = 1 - \sum_{k=1}^n p_{i,k}^2 $$
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To recreate this split, recall that scikit-learn uses the Classification And Regression Tree (CART) algorithm to train Decision Trees. Here the key idea is to search for the pair <code>(feature, split_point)</code> the produces the purest subsets, as measured by their Gini impurity. The function to minimise is given by</p>
-<p>{{% raw %}}
+<p>{% raw %}
 $$ J(k, t_k) = \frac{m_\mathrm{left}}{m} G_\mathrm{left} + \frac{m_\mathrm{right}}{m}G_\mathrm{right} $$
-{{% endraw %}}</p>
+{% endraw %}</p>
 <p>where $k$ is a single feature, $t_k$ is the split point (e.g. "missing energy magnitude $\leq$ 1.14), $m_\mathrm{left/right}$ is the number of examples in the left/right subset, and $G_\mathrm{left/right}$ is the Gini impurity. Thus for each feature $k$, the strategy will be to calculate $J(k, t_k)$ for every possible split point $t_k$ and update the score if it less than what we have seen already. Implemented as code, the result could look like:</p>
 
 </div>
@@ -3145,9 +3145,9 @@ Wall time: 15.7 s
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises"> </a></h2><ul>
 <li>An alternative measure of impurity is the so-called Shannon entropy, which measures the average information content of a message. In the context of classification, a set's entropy is zero when it contains examples of only one class. Use the definition of entropy 
-{{% raw %}}
+{% raw %}
 $$ H_i = \sum_{k=1}^n p_{i,k} \log p_{i,k} $$
-{{% endraw %}}
+{% endraw %}
 to extend our <code>DecisionTree</code> class with a new <code>criterion</code> hyperparameter that allows one to use Gini impurity or entropy as a measure of a node's impurity.</li>
 <li>In our implementation of <code>TreeEnsemble</code> we use all the features at every node to find the best split point. Extend the functionality by introducing a <code>max_features</code> hyperparameter that controls the number of features used at every node in a manner similar to scikit-learn.</li>
 </ul>
