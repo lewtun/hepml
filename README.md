@@ -41,10 +41,10 @@ Due to constraints placed by the COVID-19 pandemic, the course will be delivered
 | CW | Date | Topic | Links |
 | :--- | :--- | :--- | :--- |
 | 15 | 7.4 | Introduction to random forests | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/hepml/master?urlpath=lab/tree/notebooks%2Flesson01_intro-to-random-forests.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lewtun/hepml/blob/master/notebooks/lesson01_intro-to-random-forests.ipynb) |
-| 17 | 21.4 | Random forest deep dive |  |
-| 18 | 28.4 | Model interpretation |  |
-| 19 | 5.5 | Random forests from scratch | |
-| 20 | 12.5 | Gradient boosting | |
+| 17 | 21.4 | Random forest deep dive | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/hepml/master?urlpath=lab/tree/notebooks%2Flesson02_random-forest-deep-dive.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lewtun/hepml/blob/master/notebooks/lesson02_random-forest-deep-dive.ipynb) |
+| 18 | 28.4 | Random forest from scratch | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/hepml/master?urlpath=lab/tree/notebooks%2Flesson03_random-forest-from-scratch.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lewtun/hepml/blob/master/notebooks/lesson03_random-forest-from-scratch.ipynb) |
+| 19 | 5.5 | Introduction to gradient boosting | [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/lewtun/hepml/master?urlpath=lab/tree/notebooks%2Flesson04_intro-to-gradient-boosting.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/lewtun/hepml/blob/master/notebooks/lesson04_intro-to-gradient-boosting.ipynb) |
+| 20 | 12.5 | Gradient boosting deep dive | |
 | 21 | 19.5 | Topological machine learning I | |
 | 22 | 26.5 | Topological machine learning II | |
 
