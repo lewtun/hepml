@@ -6,7 +6,8 @@ index = {"download_dataset": "00_core.ipynb",
          "display_large": "00_core.ipynb",
          "rf_feature_importance": "00_core.ipynb",
          "plot_feature_importance": "00_core.ipynb",
-         "plot_regression_tree": "00_core.ipynb"}
+         "plot_regression_tree": "00_core.ipynb",
+         "plot_predictions": "00_core.ipynb"}
 
 modules = ["core.py"]
 
