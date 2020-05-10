@@ -316,24 +316,6 @@ description: "How to implement gradient boosting from scratch, along with practi
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">LSBoost</span>
-<span class="k">del</span> <span class="n">LeastSquares</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LSBoost</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_trees</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">max_depth</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">n_trees</span> <span class="o">=</span> <span class="n">n_trees</span>
@@ -396,10 +378,10 @@ description: "How to implement gradient boosting from scratch, along with practi
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-14-57f207b2d3be&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-7-57f207b2d3be&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>lsb <span class="ansi-blue-fg">=</span> LSBoost<span class="ansi-blue-fg">(</span>n_trees<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-13-133667a2bae4&gt;</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, n_trees, learning_rate, max_depth)</span>
+<span class="ansi-green-fg">&lt;ipython-input-6-133667a2bae4&gt;</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, n_trees, learning_rate, max_depth)</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         self<span class="ansi-blue-fg">.</span>max_depth <span class="ansi-blue-fg">=</span> max_depth
 <span class="ansi-green-intense-fg ansi-bold">      6</span> 
 <span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>loss <span class="ansi-blue-fg">=</span> LeastSquares<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
@@ -1335,8 +1317,8 @@ susy.feather        susy_test.feather
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 39 s, sys: 88.7 ms, total: 39 s
-Wall time: 39.1 s
+<pre>CPU times: user 40.2 s, sys: 107 ms, total: 40.3 s
+Wall time: 40.3 s
 </pre>
 </div>
 </div>
@@ -1517,8 +1499,8 @@ ROC AUC on valid: 0.87
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 15.2 s, sys: 3.29 s, total: 18.4 s
-Wall time: 1.42 s
+<pre>CPU times: user 15 s, sys: 3.34 s, total: 18.3 s
+Wall time: 1.41 s
 </pre>
 </div>
 </div>
@@ -1609,7 +1591,7 @@ ROC AUC on valid: 0.873
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 11.2 s, sys: 1.5 s, total: 12.7 s
+<pre>CPU times: user 13.3 s, sys: 1.45 s, total: 14.8 s
 Wall time: 1.01 s
 </pre>
 </div>
