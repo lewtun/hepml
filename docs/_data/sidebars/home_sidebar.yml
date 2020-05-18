@@ -28,7 +28,7 @@ entries:
       title: Lesson 5 - Gradient boosting deep dive
       url: /lesson05_gradient-boosting-deep-dive
     - output: web,pdf
-      title: Lesson 6 - Introduction to persistent homology
+      title: Lesson 6 - Persistent homology
       url: /lesson06_persistent-homology
     - output: web,pdf
       title: Python primer
