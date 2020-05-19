@@ -27,7 +27,9 @@ def download_dataset(dataset_name: str):
         "susy_sample.feather": "1l4x_uBeup4eciLDK4YjnfY_G8yTpXLkP",
         "shapes.zip": "1qV-BHzkgwHt8r61Ycf4p9l0CllOQr7I9",
         "Cells.jpg": "1D841Ny9DXAcpgsOTmhgGTahAp4yCWaBh",
-        "BlackHole.jpg": "1X1hn31N5n17KQpWw1fXi8Da5CjTTxv0i"
+        "BlackHole.jpg": "1X1hn31N5n17KQpWw1fXi8Da5CjTTxv0i",
+        "diagrams_basic.pkl": "1TJiqCarlcPDk5he_ABscizWhsm_ZIeMG",
+        "diagrams.pkl": "1oq9j6oBclSK1u_eVfFeWWktNVuD31neh"
     }
 
     path = "../data/"
