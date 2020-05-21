@@ -25,11 +25,17 @@ entries:
       title: 'Lesson 4 - Introduction to gradient boosting '
       url: /lesson04_intro-to-gradient-boosting
     - output: web,pdf
+      title: Topological Time Series Analysis
+      url: /lesson04_topological-time-series
+    - output: web,pdf
       title: Lesson 5 - Gradient boosting deep dive
       url: /lesson05_gradient-boosting-deep-dive
     - output: web,pdf
       title: Lesson 6 - Persistent homology
       url: /lesson06_persistent-homology
+    - output: web,pdf
+      title: Lesson 7 - Topology of time series
+      url: /lesson07_topological-time-series
     - output: web,pdf
       title: Python primer
       url: /python-primer
