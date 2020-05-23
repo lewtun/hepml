@@ -29,7 +29,8 @@ def download_dataset(dataset_name: str):
         "Cells.jpg": "1D841Ny9DXAcpgsOTmhgGTahAp4yCWaBh",
         "BlackHole.jpg": "1X1hn31N5n17KQpWw1fXi8Da5CjTTxv0i",
         "diagrams_basic.pkl": "1TJiqCarlcPDk5he_ABscizWhsm_ZIeMG",
-        "diagrams.pkl": "1oq9j6oBclSK1u_eVfFeWWktNVuD31neh"
+        "diagrams.pkl": "1oq9j6oBclSK1u_eVfFeWWktNVuD31neh",
+        "gravitational-wave-signals.npy": "1h5R_ceSLw3QsIVOgSQ5pRxwyQykCf6S5"
     }
 
     path = "../data/"
